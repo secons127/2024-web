@@ -1,4 +1,4 @@
 JDBC 
 1. 커넥터 (=드라이버) 로딩
 2. DB 서버 접속 (URL,USER,PASS)
-3. 
+3. SQL 
