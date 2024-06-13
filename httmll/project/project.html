@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Registration</title>
+    <link rel="stylesheet" href="project.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>WiTH maker studio</h1>
+        </div>
+        <h2>프로젝트 등록</h2>
+        <form id="project-form">
+            <div class="form-group">
+                <label for="category">카테고리 선택하기</label>
+                <select id="category" name="category">
+                    <option value="">카테고리를 선택하세요</option>
+                    <!-- Add more options here -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="project-name">프로젝트명</label>
+                <input type="text" id="project-name" name="project-name" placeholder="프로젝트명을 입력하세요">
+            </div>
+            <div class="form-group">
+                <label for="target-amount">목표 금액</label>
+                <input type="text" id="target-amount" name="target-amount" placeholder="목표 금액을 입력하세요">
+            </div>
+            <div class="form-group">
+                <label for="funding-period">펀딩기간</label>
+                <input type="date" id="funding-start" name="funding-start">
+                <input type="date" id="funding-end" name="funding-end">
+            </div>
+            <div class="form-group">
+                <label for="completion-date">결실일</label>
+                <input type="date" id="completion-date" name="completion-date">
+            </div>
+            <div class="form-group">
+                <label for="content-description">콘텐츠 설명</label>
+                <textarea id="content-description" name="content-description" placeholder="콘텐츠 설명을 입력하세요"></textarea>
+                <div id="additional-content-descriptions" class="additional-container"></div>
+                <div class="btn-container">
+                    <button type="button" class="add-btn" onclick="addContentDescription()">추가하기</button>
+                    <button type="button" class="delete-btn" onclick="deleteContentDescription()">삭제하기</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="product-configuration">제품구성</label>
+                <textarea id="product-configuration" name="product-configuration" placeholder="제품 구성 내용을 입력하세요"></textarea>
+                <div id="additional-products" class="additional-container"></div>
+                <div class="btn-container">
+                    <button type="button" class="add-btn" onclick="addProductConfiguration()">추가하기</button>
+                    <button type="button" class="delete-btn" onclick="deleteProductConfiguration()">삭제하기</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="project-introduction">사업자 소개</label>
+                <textarea id="project-introduction" name="project-introduction" placeholder="사업자 소개내용을 입력하세요"></textarea>
+                <div id="additional-introductions" class="additional-container"></div>
+            </div>
+            <button type="submit" class="submit-btn">등록하기</button>
+        </form>
+        <div class="footer">
+            <p>
+                08221 서울시 구로구 경인로 445 ([구]고척동 62-160) 동양미래대학교 <br>
+                TEL. 02-2610-1700  /  FAX. 02-2688-5494 <br>
+                COPYRIGHT(c) DONGYANG MIRAE UNIVERSITY. ALL RIGHTS RESERVED.
+            </p>
+        </div>
+    </div>
+    <script>
+        function addContentDescription() {
+            const container = document.getElementById('additional-content-descriptions');
+            const div = document.createElement('div');
+            div.classList.add('additional-item');
+
+            const textarea = document.createElement('textarea');
+            textarea.name = 'content-description';
+            textarea.placeholder = '콘텐츠 설명을 입력하세요';
+            textarea.classList.add('additional-textarea');
+
+            div.appendChild(textarea);
+            container.appendChild(div);
+        }
+
+        function deleteContentDescription() {
+            const container = document.getElementById('additional-content-descriptions');
+            if (container.lastChild) {
+                container.removeChild(container.lastChild);
+            }
+        }
+
+        function addProductConfiguration() {
+            const container = document.getElementById('additional-products');
+            const div = document.createElement('div');
+            div.classList.add('additional-item');
+
+            const textarea = document.createElement('textarea');
+            textarea.name = 'product-configuration';
+            textarea.placeholder = '제품 구성 내용을 입력하세요';
+            textarea.classList.add('additional-textarea');
+
+            div.appendChild(textarea);
+            container.appendChild(div);
+        }
+
+        function deleteProductConfiguration() {
+            const container = document.getElementById('additional-products');
+            if (container.lastChild) {
+                container.removeChild(container.lastChild);
+            }
+        }
+
+        function addProjectIntroduction() {
+            const container = document.getElementById('additional-introductions');
+            const div = document.createElement('div');
+            div.classList.add('additional-item');
+
+            const textarea = document.createElement('textarea');
+            textarea.name = 'project-introduction';
+            textarea.placeholder = '사업자 소개내용을 입력하세요';
+            textarea.classList.add('additional-textarea');
+
+            div.appendChild(textarea);
+            container.appendChild(div);
+        }
+    </script>
+</body>
+</html>

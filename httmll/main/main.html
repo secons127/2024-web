@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Updated Webpage</title>
+    <link rel="stylesheet" href="test2-main.css">
+</head>
+<body>
+    <header>
+        <h1>WiTH</h1>
+        <nav>
+            <ul>
+                <li><a href="#">홈</a></li>
+                <li><a href="#">서비스</a></li>
+                <li><a href="#">소식</a></li>
+                <li><a href="#">연락처</a></li>
+                <li><a href="#">로그인</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="https://via.placeholder.com/800x400" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="https://via.placeholder.com/800x400" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="https://via.placeholder.com/800x400" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="https://via.placeholder.com/800x400" style="width:100%">
+        </div>
+    </div>
+    <br>
+    <div style="text-align:center">
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+    </div>
+
+    <div class="content">
+        <div class="box">
+            <img src="https://via.placeholder.com/150" alt="placeholder">
+            <p>펀딩 | 나만의 향 정지인이 텀블러</p>
+            <button>참여하기</button>
+        </div>
+        <div class="box">
+            <img src="https://via.placeholder.com/150" alt="placeholder">
+            <p>공동구매 | XX여고 교복 공동구매</p>
+            <button>참여하기</button>
+        </div>
+        <div class="box">
+            <img src="https://via.placeholder.com/150" alt="placeholder">
+            <p>펀딩 | 우드 키보드! 한정수량</p>
+            <button>참여하기</button>
+        </div>
+        <div class="box">
+            <img src="https://via.placeholder.com/150" alt="placeholder">
+            <p>펀딩 | 최고의 만년필</p>
+            <button>참여하기</button>
+        </div>
+        <div class="box">
+            <img src="https://via.placeholder.com/150" alt="placeholder">
+            <p>펀딩 | 여름은 꽃과 같이, 꽃우산</p>
+            <button>참여하기</button>
+        </div>
+        <div class="box">
+            <img src="https://via.placeholder.com/150" alt="placeholder">
+            <p>펀딩 | 오늘은 이 향기로, 기분 좋은 향수</p>
+            <button>참여하기</button>
+        </div>
+    </div>
+
+    <div class="community">
+        <h2>커뮤니티</h2>
+        <ul>
+            <li>🔥 HOT | 저만의 레시피 오이쌀국밥 레시피 알려드려요! <span class="counts">📝 531 ❤️ 324</span></li>
+            <li>🔥 HOT | 저겨운 일상에서 벗어나 동네 일상을 즐길 곳 추천! <span class="counts">📝 422 ❤️ 204</span></li>
+            <li>오늘 너무 바빴어요.ㅜㅜ <span class="counts">📝 342 ❤️ 178</span></li>
+            <li>대학교에 사람들이 엄청나 많아졌어요! <span class="counts">📝 333 ❤️ 156</span></li>
+            <li>고등동 운동 가요 있으면! <span class="counts">📝 84 ❤️ 62</span></li>
+            <li>사랑에 빠질 것 같아요... <span class="counts">📝 43 ❤️ 65</span></li>
+            <li>버거운 유튜버가 너무 예뻐요ㅜㅜ <span class="counts">📝 99 ❤️ 72</span></li>
+        </ul>
+    </div>
+    
+
+    <footer>
+        <p>08221 서울시 구로구 경인로 445 (구로동 125)</p>
+        <p>TEL: 02-2610-1700 FAX: 02-2684-4845</p>
+        <p>COPYRIGHT ⓒ DONGYANG MIRA UNIVERSITY. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+    </script>
+</body>
+</html>

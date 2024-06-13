@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funding Detail</title>
+    <link rel="stylesheet" href="fundingpage.css">
+</head>
+<body>
+    <div class="header">
+        <h1>나만의 작은 책상, 라이팅박스</h1>
+    </div>
+    <div class="container">
+        <!-- Main Content Area -->
+        <div class="content-wrapper">
+            <div class="main-content">
+                <div class="image-slider">
+                    <div class="slide">
+                        <img src="/mnt/data/image.png" alt="Image 1">
+                    </div>
+                    <div class="slide">
+                        <img src="/mnt/data/image.png" alt="Image 2">
+                    </div>
+                    <div class="slide">
+                        <img src="/mnt/data/image.png" alt="Image 3">
+                    </div>
+                </div>
+                <div class="project-stats">
+                    <p><span>모인금액:</span> 18,372,050원 734%</p>
+                    <p><span>남은시간:</span> 12일</p>
+                    <p><span>후원자:</span> 68명</p>
+                    <p><span>목표금액:</span> 2,500,000원</p>
+                    <p><span>펀딩 기간:</span> 2024.05.28 ~ 2024.06.22</p>
+                    <p><span>결제:</span> 목표금액 달성 시 2024.06.23에 결제 진행</p>
+                </div>
+                <div class="button-container">
+                    <button class="donate-button">이 프로젝트 후원하기</button>
+                </div>
+            </div>
+
+            <!-- Sidebar Area -->
+            <div class="sidebar">
+                <div class="creator-info">
+                    <div class="creator-image" style="background-image: url('creator_image.png'); background-size: cover;"></div>
+                    <div class="creator-details">
+                        <h2>라이트웨어(light wear)</h2>
+                        <p>아이디어스 작가 • 스테디오 크리에이터</p>
+                        <p>안녕하세요! 2.7억 펀딩을 성공한, 간호사 자매가 만드는 나를 위한, 내일을 위한 라이프 스타일 브랜드 라이트웨어입니다!</p>
+                        <p>보여지기 위한 옷이 아닌 나를 위한 편안한 옷을 만들기 위해 노력하고 있는 브랜드입니다. 디자인 뿐 아니라 편안함을 위한 캐쥬얼웨어를 만들어가겠습니다.</p>
+                    </div>
+                    <div class="creator-buttons">
+                        <button class="follow-button">팔로우</button>
+                        <button class="contact-button">창작자 문의</button>
+                    </div>
+                </div>
+
+                <div class="rewards">
+                    <h2>선물 선택</h2>
+                    <div class="reward-item">
+                        <p>1,000원 + 선물 없이 후원하기</p>
+                    </div>
+                    <div class="reward-item">
+                        <p>258,300원 + 4분 33초 패키지</p>
+                    </div>
+                    <div class="reward-item">
+                        <p>273,300원 + 패키지 2</p>
+                    </div>
+                    <div class="reward-item">
+                        <p>293,300원 + 패키지 3</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="details">
+        <div class="tab-menu">
+            <button class="tab-link active" onclick="openTab(event, 'project-plan')">프로젝트 계획</button>
+            <button class="tab-link" onclick="openTab(event, 'update')">업데이트</button>
+            <button class="tab-link" onclick="openTab(event, 'community')">커뮤니티</button>
+            <button class="tab-link" onclick="openTab(event, 'review')">후기</button>
+        </div>
+        <div id="project-plan" class="tab-content">
+            <h2>소개</h2>
+            <div class="intro-image" style="background-color: #e0e0e0;"></div>
+            <p>사각사각 글을 쓰며 내면을 탐험하고 소중한 일상을 책으로 엮어가는 소중한 보물상자 슬로어 라이팅 박스</p>
+        </div>
+    </div>
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab-link");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        document.getElementById("project-plan").style.display = "block";
+    </script>
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = i === index ? 'block' : 'none';
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            showSlide(currentIndex);
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            showSlide(currentIndex);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showSlide(currentIndex);
+            setInterval(nextSlide, 3000); // Change slide every 3 seconds
+        });
+    </script>
+</body>
+</html>
