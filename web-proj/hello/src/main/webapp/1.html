@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funding Detail</title>
+    <link rel="stylesheet" href="2.css">
+</head>
+<body>
+    <div class="header">
+    <h6>카테고리</h6>
+        <h1>나만의 작은 책상 라이팅박스</h1> <!-- 프로젝트 이름 -->
+    </div>
+    <div class="container">
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <div class="main-image" style="background-color: #e0e0e0;"></div>
+            <div class="project-stats">
+                <p>모인금액: 18,372,050원 734%</p>
+                <p>남은시간: 12일</p>
+                <p>후원자: 68명</p>
+                <p>목표금액: 2,500,000원</p>
+                <p>펀딩 기간: 2024.05.28 ~ 2024.06.22</p>
+                <p>결제: 목표금액 달성 시 2024.06.23에 결제 진행</p>
+            </div>
+            <button class="donate-button">이 프로젝트 후원하기</button>
+        </div>
+
+        <!-- Sidebar Area -->
+        <div class="sidebar">
+            <div class="creator-info">
+                <h2>창작자 소개</h2><!-- 사업자 소개 -->
+                <div class="creator-image" style="background-color: #e0e0e0;"></div>
+                <p>출판사를 운영하는 슬로어 북카페</p><!-- 사업자명 -->
+                <button class="follow-button">팔로우</button>
+                <button class="contact-button">창작자 문의</button>
+            </div>
+
+            <div class="rewards"><!-- 제품구성 -->
+                <h2>선물 선택</h2>
+                <div class="reward-item">
+                    <p>1,000원 + 선물 없이 후원하기</p>
+                </div>
+                <div class="reward-item">
+                    <p>258,300원 + 4분 33초 패키지</p>
+                </div>
+                <div class="reward-item">
+                    <p>273,300원 + 패키지 2</p>
+                </div>
+                <div class="reward-item">
+                    <p>293,300원 + 패키지 3</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="details">
+        <div class="tab-menu">
+            <button class="tab-link active" onclick="openTab(event, 'project-plan')">프로젝트 계획</button>
+            <button class="tab-link" onclick="openTab(event, 'update')">업데이트</button>
+            <button class="tab-link" onclick="openTab(event, 'community')">커뮤니티</button>
+            <button class="tab-link" onclick="openTab(event, 'review')">후기</button>
+        </div>
+        <div id="project-plan" class="tab-content">
+            <h2>소개</h2>
+            <div class="intro-image" style="background-color: #e0e0e0;"></div>
+            <p>사각사각 글을 쓰며 내면을 탐험하고 소중한 일상을 책으로 엮어가는 소중한 보물상자 슬로어 라이팅 박스</p>
+        </div>
+    </div>
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab-link");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        document.getElementById("project-plan").style.display = "block";
+    </script>
+</body>
+</html>
+
+
+
+

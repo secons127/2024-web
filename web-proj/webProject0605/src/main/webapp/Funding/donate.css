@@ -1,0 +1,96 @@
+/* donationForm.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.header {
+    padding: 20px;
+    text-align: center;
+    background-color: #ff6f61;
+    color: white;
+}
+
+.donation-form {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.donation-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.donation-form h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.gift-info, .additional-donation, .sponsor-info, .shipping-info, .payment-method, .donation-confirm {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fafafa;
+}
+
+.gift-info p, .sponsor-info p, .shipping-info p, .donation-confirm p {
+    margin: 5px 0;
+}
+
+.additional-donation input {
+    width: 100px;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.payment-method input {
+    margin-right: 10px;
+}
+
+.donate-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+}
+
+.donate-button:hover {
+    background-color: #ff5a4d;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.quantity-control button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    background-color: white;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 0;
+}
+
+.quantity-control input {
+    width: 50px;
+    text-align: center;
+    margin: 0 10px;
+    border: 1px solid #ddd;
+}

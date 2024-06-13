@@ -1,0 +1,132 @@
+@charset "UTF-8";
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.funding-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.funding-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    flex: 1 1 calc(25% - 20px); /* 카드 크기 조정 */
+    margin-bottom: 20px;
+    text-align: left;
+    transition: transform 0.3s ease;
+    max-width: calc(25% - 20px); /* 최대 크기 설정 */
+}
+
+.funding-card:hover {
+    transform: translateY(-10px);
+}
+
+.image-placeholder {
+    background-color: #cccccc;
+    height: 150px; /* 크기 조정 */
+}
+
+.category, .title, .description, .funding-info {
+    padding: 10px 15px;
+}
+
+.category {
+    font-size: 12px; /* 크기 조정 */
+    color: #555;
+}
+
+.title {
+    font-size: 16px; /* 크기 조정 */
+    font-weight: bold;
+    color: #333;
+}
+
+.description {
+    font-size: 12px; /* 크기 조정 */
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.funding-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px; /* 크기 조정 */
+    color: #333;
+}
+
+.funding-info .percentage {
+    font-size: 14px; /* 크기 조정 */
+    font-weight: bold;
+    color: #007bff;
+}
+
+.funding-info .amount, .funding-info .days-left {
+    color: #333;
+}
+
+.pagination {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+}
+
+.pagination a:hover {
+    background-color: #0056b3;
+}
+
+.pagination strong {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    background-color: #0056b3;
+    color: #fff;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .funding-card {
+        flex: 1 1 calc(33.333% - 20px); /* 화면이 작아지면 3열로 변경 */
+        max-width: calc(33.333% - 20px);
+    }
+}
+
+@media (max-width: 900px) {
+    .funding-card {
+        flex: 1 1 calc(50% - 20px); /* 화면이 더 작아지면 2열로 변경 */
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 600px) {
+    .funding-card {
+        flex: 1 1 100%; /* 화면이 더 작아지면 1열로 변경 */
+        max-width: 100%;
+    }
+}
